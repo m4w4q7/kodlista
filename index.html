@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	
+		<title>Kódlista</title>
+	
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+	</head>
+	
+	<body>
+		<div id="main-container">
+		<!--
+			<ul id="code-list" class="list-group">
+				<li class="list-group-item">caws</li>
+				<li class="list-group-item">fewfew</li>
+			</ul>
+				
+			
+			<div id="note-container" style="display: none">
+				<div id="nav">nav</div>
+				<div id="edit">edit</div>
+				<div id="view">view</div>
+			</div>
+		-->
+		</div>
+		
+		
+		<!--
+		  -- Underscore típusú sablonok.
+		  -- "A speciális type attribútum miatt a böngésző nem értelmezi a script elem tartalmát, viszont azt az id-n keresztül az innerHTML tulajdonsággal el lehet érni, és átadni a sablonfeldolgozónak, amely értelmezi azt (függvényt állítván elő belőle), majd konkrét adatot kapva a kész HTML szöveget is előállítja."
+		  -->
+		<script type="text/template" id="list-item-template">
+			<%= title %>
+		</script>
+		
+		<script type="text/template" id="main-container-template">
+			<h1>Kódlista</h1>
+			<div id="main"></div>
+		</script>
+		
+		<script type="text/template" id="list-container-template">
+			<div id="filter"></div>
+			<div id="list"></div>
+		</script>
+	
+		<script type="text/template" id="filter-template">
+			<form class="form-inline">
+				<div class="form-group">
+						<label for="text-filter">Filter</label>
+					<input type="text" class="form-control" id="text-filter">
+				</div>
+			</form>
+		</script>
+		
+		<script type="text/template" id="snippet-container-template">
+			<div id="filter"></div>
+			<div id="snippet"></div>
+		</script>
+		
+		<script type="text/template" id="snippet-view-template">
+			<h2><% title %></h2>
+			<pre><% code %></pre>
+		</script>
+		
+		
+		<!--
+		  -- Egyetlen scriptet kell csak behúzni, a require.js-t, a többit majd ő tölti le.
+		  -- A data-main attribútum a require.js-nek szól, itt jelöljük ki a belépési pontot.
+		  -->
+		<script type="text/javascript" src="bower_components/requirejs/require.js" 
+			data-main="js/main"></script>
+		
+	</body>
+</html>
