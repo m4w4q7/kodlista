@@ -24,10 +24,12 @@ define(
 	
 		return Marionette.LayoutView.extend({
 			template: '#list-container-template',
+			
 			regions: {
 				'filter': '#filter',
 				'list': '#list',
 			},
+			
 			initialize: function () {
 				this.filterView = new FilterView();
 				this.collection = makeFilteredCollection(this.collection, function (filterText) {
@@ -37,14 +39,17 @@ define(
 				});
 				this.collection.resetFilter('');
 				
+				// this.filterView.on('filter:change', ...);
 				this.listenTo(this.filterView, 'filter:change', this.updateCollection);
 			},
+			
 			onBeforeShow: function () {
 				this.getRegion('filter').show(this.filterView);
 				this.getRegion('list').show(new ListView({
 					collection: this.collection
 				}));
 			},
+			
 			updateCollection: function (filterText) {
 				this.collection.resetFilter(filterText);
 			}

@@ -11,6 +11,7 @@ define(
 			},
 			onFilter: function (e) {
 				var filterText = this.ui.filterInput.val();
+				// console.log(filterText);
 				this.trigger('filter:change', filterText);
 			}
 		});

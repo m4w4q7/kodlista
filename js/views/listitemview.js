@@ -8,9 +8,10 @@ define(
 			events: {
 				'click': 'onClick'
 			},
-			onClick: function() {
+			onClick: function (e) {
 				// console.log(this.model); // backbone objektum
 				Backbone.trigger('snippet:selected', this.model);
+				// this.model.destroy();
 			}
 		});
 	}

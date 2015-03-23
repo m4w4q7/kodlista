@@ -31,9 +31,9 @@
 		
 		
 		<!--
-		  -- Underscore típusú sablonok.
-		  -- "A speciális type attribútum miatt a böngésző nem értelmezi a script elem tartalmát, viszont azt az id-n keresztül az innerHTML tulajdonsággal el lehet érni, és átadni a sablonfeldolgozónak, amely értelmezi azt (függvényt állítván elő belőle), majd konkrét adatot kapva a kész HTML szöveget is előállítja."
-		  -->
+		  - Underscore típusú sablonok.
+		  - "A speciális type attribútum miatt a böngésző nem értelmezi a script elem tartalmát, viszont azt az id-n keresztül az innerHTML tulajdonsággal el lehet érni, és átadni a sablonfeldolgozónak, amely értelmezi azt (függvényt állítván elő belőle), majd konkrét adatot kapva a kész HTML szöveget is előállítja."
+		 -->
 		<script type="text/template" id="list-item-template">
 			<%= title %>
 		</script>
@@ -69,11 +69,10 @@
 		
 		
 		<!--
-		  -- Egyetlen scriptet kell csak behúzni, a require.js-t, a többit majd ő tölti le.
-		  -- A data-main attribútum a require.js-nek szól, itt jelöljük ki a belépési pontot.
-		  -->
-		<script type="text/javascript" src="bower_components/requirejs/require.js" 
-			data-main="js/main"></script>
+		  - Egyetlen scriptet kell csak behúzni, a require.js-t, a többit majd ő tölti le.
+		  - A data-main attribútum a require.js-nek szól, itt jelöljük ki a belépési pontot. Aszinkron módon töltődik be.
+		 -->
+		<script type="text/javascript" src="bower_components/requirejs/require.js" data-main="js/main"></script>
 		
 	</body>
 </html>
