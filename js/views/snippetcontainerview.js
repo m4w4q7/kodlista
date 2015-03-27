@@ -15,14 +15,6 @@ define(
 				'snippet': '#snippet',
 			},
 			
-			initialize: function () {
-				this.snippetViewView = new SnippetViewView({model: this.model});
-				/*
-				this.filterView = new FilterView();
-				this.listenTo(this.filterView, 'filter:change', this.updateCollection);
-				*/
-			},
-			
 			onBeforeShow: function () {
 				this.getRegion('snippet').show(new SnippetViewView({model: this.model}));
 			}

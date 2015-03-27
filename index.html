@@ -33,11 +33,17 @@
 		<!--
 		  - Underscore típusú sablonok.
 		  - "A speciális type attribútum miatt a böngésző nem értelmezi a script elem tartalmát, viszont azt az id-n keresztül az innerHTML tulajdonsággal el lehet érni, és átadni a sablonfeldolgozónak, amely értelmezi azt (függvényt állítván elő belőle), majd konkrét adatot kapva a kész HTML szöveget is előállítja."
+		  - Sajnos így sablonokkal eléggé átláthatatlan lesz az oldal szerkezete, ezért létrehoztam a structure.xml-t, amiben megpróbálom szemléltetni. A view-k és sablonok hierarhiája itt látható (bár ebben nincs feltüntetve a testvérek viszonya):
+		  -
+		  - BodyView (LayoutView)
+		  - 	MainContainerView (LayoutView, #main-container-template)
+		  - 		ListContainerView (LayoutView, #list-container-template)
+		  - 			FilterView (ItemView, #filter-template)
+		  - 			ListView (CollectionView)
+		  - 				ListItemView (ItemView, #list-item-template)
+		  - 		SnippetContainerView (LayoutView, #snippet-container-template)
+		  - 			SnippetViewView (ItemView, #snippet-view-template)
 		 -->
-		<script type="text/template" id="list-item-template">
-			<%= title %>
-		</script>
-		
 		<script type="text/template" id="main-container-template">
 			<h1>Kódlista</h1>
 			<div id="main"></div>
@@ -47,7 +53,7 @@
 			<div id="filter"></div>
 			<div id="list"></div>
 		</script>
-	
+		
 		<script type="text/template" id="filter-template">
 			<form class="form-inline">
 				<div class="form-group">
@@ -57,14 +63,18 @@
 			</form>
 		</script>
 		
+		<script type="text/template" id="list-item-template">
+			<%= title %>
+		</script>
+		
 		<script type="text/template" id="snippet-container-template">
-			<div id="filter"></div>
+			<div id="nav"></div>
 			<div id="snippet"></div>
 		</script>
 		
 		<script type="text/template" id="snippet-view-template">
-			<h2><% title %></h2>
-			<pre><% code %></pre>
+			<h2><%= title %></h2>
+			<pre><%= code %></pre>
 		</script>
 		
 		

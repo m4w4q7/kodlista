@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<body>
+	<view class="BodyView" type="LayoutView">
+		
+		<div id="main-container">
+			<view class="MainContainerView" type="LayoutView" template="#main-container-template">
+				
+				<h1>Kódlista</h1>
+				<div id="main">
+					<view class="ListContainerView" type="LayoutView" template="#list-container-template">
+						
+						<div id="filter">
+							<view class="FilterView" type="ItemView" template="#filter-template">
+								
+								<form class="form-inline">
+									<div class="form-group">
+										<label for="text-filter">Filter</label>
+										<input type="text" id="text-filter" class="form-control" />
+									</div>
+								</form>
+								
+							</view>
+						</div>
+						<div id="list">
+							<view class="ListView" type="CollectionView">
+								
+								<ul class="list-group">
+									<view class="ListItemView" type="ItemView" template="#list-item-template">
+									
+										<li class="list-group-item"><%= title %></li>
+									
+									</view>
+								</ul>
+								
+							</view>
+						</div>
+						
+					</view>
+					
+					<view class="SnippetContainerView" type="LayoutView" template="#snippet-container-template">
+						
+						<div id="nav">
+						</div>
+						
+						<div id="snippet">
+							<view class="SnippetViewView" type="ItemView" template="#snippet-view-template">
+								<h2><% title %></h2>
+								<pre><% code %></pre>
+							</view>
+						</div>
+						
+					</view>
+				</div>
+				
+			</view>
+		</div>
+		
+	</view>
+</body>
